@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>How Browsers work - by Horacio Herrera</title>
+	<link href='https://fonts.googleapis.com/css?family=Fira+Mono:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="section" id="header">
+		<div class="row">
+			<div class="title">
+				<h1>How Browsers work</h1>
+				<h4>(at least what I understand)</h4>
+			</div>
+			<p>
+				<span>by Horacio Herrera</span>
+				<br>
+				<a href="https://twitter.com/hhg2288">@hhg2288</a>
+			</p>
+			<p>
+				<span>march 17 2016</span>
+				<br>
+				<a href="http://panamajs.com/">PanamaJS</a>
+			</p>
+		</div>
+	</div>
+
+	<div class="section" id="index">
+		<div class="row">
+			<h2 class="title">What I will talk about today</h2>
+			<ul>
+				<li>Who am I</li>
+				<li>What I do at Billy</li>
+				<li>Browser Internals</li>
+				<li>Performance</li>
+				<li>References</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="section" id="whoami">
+		<div class="row">
+			<div class="title">
+				<h2>Who am I?</h2>
+			</div>
+			<ul>
+				<li>Digital Designer</li>
+				<li>Freelance Designer/Developer</li>
+				<li>Frontend Developer @ <a href="http://billymob.com">Billy</a></li>
+				<li class="extra-text">I like to do things on the web</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="section" id="disclaimer">
+		<div class="row">
+			<h2 class="title">disclaimer!!</h2>
+			<p class="important">This is the result of my own research on this topic. I dont expect you to take this statements as completely truth.</p>
+			<p class="extra-text">I'm just a designer anyway...;)</p>
+			<br>
+			<p>Sorry about my Spanish accent :(</p>
+
+		</div>
+	</div>
+
+	<div class="section" id="whatisbilly">
+		<div class="row">
+			<div class="title">
+				<h2>What is Billy?</h2>
+			</div>
+			<p><a href="http://billymob.com">Billy Mobile</a> is a 100% mobile Ad Exchange based in Barcelona.</p>
+			<img src="billyfacts.png" alt="billy facts">
+		</div>
+	</div>
+
+	<div class="section" id="whatidoatbilly">
+		<div class="row">
+			<div class="title">
+				<h2>What I do @ Billy?</h2>
+			</div>
+			<p><strong>Two core projects:</strong></p>
+			<p>1. code all different formats for the campaigns</p>
+			<p>2. High Quality Backoffices for all our clients & team</p>
+			<p class="extra-text">3. performance metrics on formats & adserver (soon)</p>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row">
+			<div class="title">
+				<h2>Let's talk about the <span class="important">Browser</span></h2>
+			</div>
+			<ul>
+				<li>Its a pritty complicated software</li>
+				<li>There's no actual documentation about how the browser should work. <span class="extra-text">But surprisingly they all look pritty similar</span></li>
+				<li>4 parts on the main rendering flow:</li>
+				<li>
+					<img src="rendering-flow.png">
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row">
+			<div class="title">
+				<h2>Example of a DOM tree</h2>
+			</div>
+			<p>this:</p>
+			<p data-height="268" data-theme-id="0" data-slug-hash="ONWvWM" data-default-tab="html" data-user="hhg2288" class="codepen">See the Pen <a href="http://codepen.io/hhg2288/pen/ONWvWM/">ONWvWM</a> by Horacio Herrera (<a href="http://codepen.io/hhg2288">@hhg2288</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+			<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+			<p>will turn into this:</p>
+			<img src="domtree.png">
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row">
+			<div class="title">
+				<h2>Some Key facts about rendering</h2>
+			</div>
+			<ul>
+				<li>Javascript blocks rendering</li>
+				<li class="important">JS it's the biggest pain byte-per-byte</li>
+				<li>CSS blocks layout <span class="extra-text">(process before actual render)</span></li>
+				<li>Browsers download 6 resources per DOMAIN in parallel</li>
+				<li><span class="code">document.write()</span>  is <span class="important">EVIL</span></li>
+				<li>if you need to do things before the DOM is completly loaded, there's more than one <span class="code">document.readyState</span></li>
+				<li>Did you check the jQuery source code? see <a href="http://www.paulirish.com/2010/10-things-i-learned-from-the-jquery-source/">this</a> & <a href="http://www.paulirish.com/2011/11-more-things-i-learned-from-the-jquery-source/">this</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="section">
+		<div class="row">
+			<div class="title">
+				<h2>Fun fact about <span class="code">document.write()</span></h2>
+			</div>
+			<img src="tokenizer.png" style="max-width: 350px;">
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row">
+			<div class="title">
+				<h2>Performance</h2>
+				<h4>Now what we can do about it</h4>
+			</div>
+			<p>What we can do is write our code better so we actually can tell the browser how he needs to render efficiently</p>
+			<p class="important">test, test, & TEST</p>
+			<p><a href="https://stevesouders.com/cuzillion/">this</a> tool will help you to test</p>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row">
+			<div class="title">
+				<h2>Reference</h2>
+			</div>
+			<ul>
+				<li><a href="http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/">How Browsers work - Post > Tali Garsiel and Paul Irish</a></li>
+				<li><a href="https://www.youtube.com/watch?v=iaOhgeCIj0w">Workshop - High Performance websites > Steve Souders</a></li>
+				<li><a href="https://www.youtube.com/channel/UC2YCnM2rCPlRkVT91fNvVkQ">Ilya Grigorik Youtube channel (@igrigorik)</a></li>
+				<li><a href="https://frontendmasters.com/courses/advanced-javascript/">Course - Advanced Javascript > Kyle Simpson (@getify)</a></li>
+				<li><a href="https://www.youtube.com/watch?v=OPaJ5XCl34Y">Asynchronous Script Loading > Kyle Simpson (@getify)</a></li>
+				<li><a href="http://jsperf.com">Tool > jsperf</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row">
+			<div class="title">
+				<h1>THANK YOU!</h1>
+				<br>
+				<h4>
+					<span>by Horacio Herrera</span>
+					<br>
+					<a href="https://twitter.com/hhg2288">@hhg2288</a>
+				</h4>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
