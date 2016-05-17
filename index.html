@@ -15,14 +15,13 @@
 				<h4>(at least what I understand)</h4>
 			</div>
 			<p>
-				<span>by Horacio Herrera</span>
-				<br>
-				<a href="https://twitter.com/hhg2288">@hhg2288</a>
+				<span>by Horacio</span>
+				<br><br>
 			</p>
 			<p>
-				<span>march 17 2016</span>
+				<span>Pinta y Colorea Lead</span>
 				<br>
-				<a href="http://panamajs.com/">PanamaJS</a>
+				<a href="http://pintaicolorea.io">pintaicolorea.io</a>
 			</p>
 		</div>
 	</div>
@@ -31,25 +30,9 @@
 		<div class="row">
 			<h2 class="title">What I will talk about today</h2>
 			<ul>
-				<li>Who am I</li>
-				<li>What I do at Billy</li>
 				<li>Browser Internals</li>
 				<li>Performance</li>
 				<li>References</li>
-			</ul>
-		</div>
-	</div>
-
-	<div class="section" id="whoami">
-		<div class="row">
-			<div class="title">
-				<h2>Who am I?</h2>
-			</div>
-			<ul>
-				<li>Digital Designer</li>
-				<li>Freelance Designer/Developer</li>
-				<li>Frontend Developer @ <a href="http://billymob.com">Billy</a></li>
-				<li class="extra-text">I like to do things on the web</li>
 			</ul>
 		</div>
 	</div>
@@ -59,31 +42,7 @@
 			<h2 class="title">disclaimer!!</h2>
 			<p class="important">This is the result of my own research on this topic. I dont expect you to take this statements as completely truth.</p>
 			<p class="extra-text">I'm just a designer anyway...;)</p>
-			<br>
-			<p>Sorry about my Spanish accent :(</p>
 
-		</div>
-	</div>
-
-	<div class="section" id="whatisbilly">
-		<div class="row">
-			<div class="title">
-				<h2>What is Billy?</h2>
-			</div>
-			<p><a href="http://billymob.com">Billy Mobile</a> is a 100% mobile Ad Exchange based in Barcelona.</p>
-			<img src="billyfacts.png" alt="billy facts">
-		</div>
-	</div>
-
-	<div class="section" id="whatidoatbilly">
-		<div class="row">
-			<div class="title">
-				<h2>What I do @ Billy?</h2>
-			</div>
-			<p><strong>Two core projects:</strong></p>
-			<p>1. code all different formats for the campaigns</p>
-			<p>2. High Quality Backoffices for all our clients & team</p>
-			<p class="extra-text">3. performance metrics on formats & adserver (soon)</p>
 		</div>
 	</div>
 
@@ -157,6 +116,35 @@
 	<div class="section">
 		<div class="row">
 			<div class="title">
+				<h2>Performance APIs Available</h2>
+			</div>
+			<ul>
+				<li><span class="code">Navigation Timing</span></li>
+				<li><span class="code">window.performance</span></li>
+				<li><span class="code">window.performance.timing</span></li>
+				<li><span class="code">window.performance.navigation</span></li>
+				<li><span class="code">window.performance.mark</span></li>
+				<li><span class="code">window.performance.measure</span></li>
+				<li><span class="code">window.performance.getEntriesByType</span></li>
+			</ul>
+			<p>
+				<a href="https://www.w3.org/TR/navigation-timing/#dom-window-performance">reference</a>
+			</p>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row">
+			<div class="title">
+				<h2>Navigation Timing</h2>
+			</div>
+			<img class="big-media" src="timing-overview.png" alt="Navigation Timing Overview">
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row">
+			<div class="title">
 				<h2>Reference</h2>
 			</div>
 			<ul>
@@ -165,7 +153,7 @@
 				<li><a href="https://www.youtube.com/channel/UC2YCnM2rCPlRkVT91fNvVkQ">Ilya Grigorik Youtube channel (@igrigorik)</a></li>
 				<li><a href="https://frontendmasters.com/courses/advanced-javascript/">Course - Advanced Javascript > Kyle Simpson (@getify)</a></li>
 				<li><a href="https://www.youtube.com/watch?v=OPaJ5XCl34Y">Asynchronous Script Loading > Kyle Simpson (@getify)</a></li>
-				<li><a href="http://jsperf.com">Tool > jsperf</a></li>
+				<li><a href="http://www.html5rocks.com/en/tutorials/webperformance/usertiming/">User Timing API - HTML5Rocks</a></li>
 			</ul>
 		</div>
 	</div>

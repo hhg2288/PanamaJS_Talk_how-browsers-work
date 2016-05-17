@@ -22,6 +22,11 @@ img {
 	margin: 30px;
 }
 
+img.big-media {
+	max-width: 2000px;
+	width: 100%;
+}
+
 a {
 	text-decoration: none;
 }
@@ -57,3 +62,7 @@ a {
 .important { color: darkred; }
 
 .extra-text { color: gray; }
+
+.block {
+	margin-top: 32px;
+}
